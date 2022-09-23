@@ -6,9 +6,9 @@ on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
-  workflow_dispatch:
 jobs:
-  call-workflow-from-test2:
-    uses: Sandeepyadav93/test2/.github/workflows/test2.yml@main
-    with:
-      username: sandy
+    runs-on: ubuntu-latest
+    steps:
+      - name: say hello
+        run: |
+          echo hello
