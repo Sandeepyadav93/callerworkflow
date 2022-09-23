@@ -5,7 +5,7 @@ name: CI
 on:
   pull_request:
     branches: [ "main" ]  
-
+  workflow_dispatch:
 jobs:
   call-workflow-from-test2:
     uses: Sandeepyadav93/test2/.github/workflows/test2.yml@main
