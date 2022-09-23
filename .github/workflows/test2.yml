@@ -3,15 +3,11 @@
 name: CI
 
 on:
-  workflow_call:
-    inputs:
-      username:
-        required: true
-        type: string
+  pull_request:
+    branches: [ "main" ]  
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print username
-        run: echo ${{ inputs.username }}
+  call-workflow-from-test2:
+    uses: Sandeepyadav93/test2/.github/workflows/test2.yml
+    with:
+      username: sandy
